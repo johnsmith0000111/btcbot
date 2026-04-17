@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
-URL = "https://www.tradingview.com/chart/qh5qOVXL/?symbol=BINANCE%3ABTCUSDT.P"
+URL = "https://www.tradingview.com/chart/?symbol=EURUSD"
 
 def take_screenshot():
     # Folder create karein agar nahi hai
@@ -42,3 +42,8 @@ def take_screenshot():
         os.system(f"git commit -m 'Chart Update: {filename}'")
         os.system("git push")
         
+    finally:
+        driver.quit()
+
+if __name__ == "__main__":
+    take_screenshot()
