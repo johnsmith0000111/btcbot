@@ -1,0 +1,26 @@
+name: Save Chart Every 5 Minutes
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Har 5 minute baad trigger hoga
+  workflow_dispatch: # Manual button
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          pip install selenium webdriver_manager
+
+      - name: Run Bot
+        run: python bot.py
