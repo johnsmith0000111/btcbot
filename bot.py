@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
-URL = "https://www.tradingview.com/chart/?symbol=EURUSD"
+URL = "https://www.tradingview.com/chart/qh5qOVXL/?symbol=BINANCE%3ABTCUSDT.P"
 
 def take_screenshot():
     # Folder create karein agar nahi hai
